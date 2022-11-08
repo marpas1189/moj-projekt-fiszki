@@ -43,10 +43,6 @@
     margin-right: 40px;
     font-size: 20px;
 }
-.right-container-print-preview {
-float: right;
-
-}
 .print-preview-box {
     border: solid black;
     width:500px;
@@ -61,4 +57,16 @@ float: right;
     color:white;
     font-size: 20px;
     float: right;
+}
+.right-container-add-word {
+    width:245px;
+    height:120px;
+    background-color: #c0c6cf;
+    display: inline-block;
+}
+.right-container-add-definition {
+    width:250px;
+    height:120px;
+    background-color: #c0c6cf;
+    display: inline-block;
 }
