@@ -1,21 +1,34 @@
-//create element
-const word = document.createElement('word');
+function getFlashcardValues() {
+  const word = document.getElementById('add-word').value;
+  const definition = document.getElementById('add-definition').value;
 
-//add class
-word.className='collection-item';
+  console.log(word);
+  console.log(definition);
 
-//add attribute
-word.setAttribute('title', 'New Item');
+  // - zebrac i dodac do obiektu
+  let obj = {
+    word: word,
+    definition: definition,
+  };
 
-//Create text node and append
+  console.log(obj);
 
-word.appendChild(document.createTextNode('test'))
+  return obj;
+}
 
-//Append
-document.querySelector()
+function storeInLocalStorage() {
+  // - Bierzemy wartoci uzytkownika
+  let flashcard = getFlashcardValues();
 
-//set local storage item
+  // - zapisac na localStorage
+  localStorage.setItem('word', JSON.stringify(flashcard));
+}
 
-window.localStorage.setItem("word","word");
-let word = localStorage.getItem('word');
-console.log(word);
+function showStorage() {
+  let flashcard = localStorage.getItem('word');
+  flashcard = JSON.parse(flashcard);
+
+  console.log(flashcard.word, flashcard.definition);
+}
+
+// - Wyswietlic na kartkach flashcardsach

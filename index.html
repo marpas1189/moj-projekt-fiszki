@@ -10,7 +10,6 @@
     <title>Flashcards</title>
 </head>
 <body>
-    <form action="action.html" method="post"></form>
     <div class ="main-container">
         <div class ="left-container-flashcards">
             <h1>Flashcards</h1>
@@ -19,14 +18,16 @@
             Słowo
             <div class ="left-container-add-word">
                 <label id="left-container-add-word"></label>
-                <input type="text" id="add-word" placeholder="Wpisz słowo">
+                <input type="text" value='' id="add-word" placeholder="Wpisz słowo" >
             </div>
             Definicja / Znaczenie
             <div class ="left-container-add-definition">
-                <label id="add-definition"></label>
-                <input type="text" id="add-definition" placeholder="Wpisz znaczenie">
+                <label></label>
+                <input type="text" value='' id="add-definition" placeholder="Wpisz znaczenie">
             </div>
-                <input id="button-add-word" type="submit" value="Dodaj fiszkę">
+            <button id="button-add-word" type="button" onclick="storeInLocalStorage()">Dodaj fiszkę</button>
+            
+            <button id="button-add-word" type="button" onclick="showStorage()">showStorage</button>
 
         </div>
         <div class ="right-container-print-preview">
@@ -43,5 +44,6 @@
             </div>
         <input id="export-button" type="submit" value="Eksportuj" />
     </div>
+    <script src='/app.js'></script>
 </body>
 </html>
