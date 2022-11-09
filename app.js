@@ -13,7 +13,8 @@ setFlashcardValues(getFromStorage());
 //   console.log('Z localStorage: ', flashcard.word, flashcard.definition);
 // }
 
-function setFlashcardValues(flashcard) {
+function setFlashcardsValues(flashcards) {
+  // TODO: Zamienic wszystkie obiekty z listy na fiszki
   document.getElementById('word1').innerHTML = flashcard.word;
   document.getElementById('def1').innerHTML = flashcard.definition;
 }
@@ -23,10 +24,13 @@ function addToLocalStorage() {
   let flashcard = getFlashcardValues();
   // - zapisac na localStorage
 
+  // TODO: Kiedy inicjowac liste? Ma pochodzic z localStorage
   let wordsList = [];
   wordsList.push(flashcard);
 
   localStorage.setItem('wordsList', JSON.stringify(wordsList));
+
+  // TODO: Dodac pojedynczy obiekt do listy czyli zrobic update istniejacej
 }
 
 function getFlashcardValues() {
