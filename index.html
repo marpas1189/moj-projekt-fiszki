@@ -25,22 +25,23 @@
                 <label></label>
                 <input type="text" value='' id="add-definition" placeholder="Wpisz znaczenie">
             </div>
-            <button id="button-add-word" type="button" onclick="storeInLocalStorage()">Dodaj fiszkę</button>
-            
-            <button id="button-add-word" type="button" onclick="showStorage()">showStorage</button>
+            <button id="button-add-word" type="button" onclick="addToLocalStorage()">Dodaj fiszkę</button>
+
+            <button id="button-add-word" type="button" onclick="getFromStorage()">showStorage</button>
 
         </div>
         <div class ="right-container-print-preview">
             <h2>Print preview</h2>
             <div class="print-preview-box">
-                <div class="right-container-add-word"></div>
+                
+                <div id='word1' class="right-container-add-word">  </div>
+                <div id="def1" class="right-container-add-definition">  </div>
+                <!-- <div class="right-container-add-word"></div>
                 <div class="right-container-add-definition"></div>
                 <div class="right-container-add-word"></div>
                 <div class="right-container-add-definition"></div>
                 <div class="right-container-add-word"></div>
-                <div class="right-container-add-definition"></div>
-                <div class="right-container-add-word"></div>
-                <div class="right-container-add-definition"></div>
+                <div class="right-container-add-definition"></div> -->
             </div>
         <input id="export-button" type="submit" value="Eksportuj" />
     </div>
