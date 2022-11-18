@@ -15,8 +15,8 @@ setFlashcardValues(getFromStorage());
 
 function setFlashcardsValues(flashcards) {
   // TODO: Zamienic wszystkie obiekty z listy na fiszki
-  document.getElementById('word1').innerHTML = flashcard.word;
-  document.getElementById('def1').innerHTML = flashcard.definition;
+  document.querySelector('#word1').innerHTML = flashcard.word;
+  document.querySelector('#def1').innerHTML = flashcard.definition;
 }
 
 function addToLocalStorage() {
@@ -34,8 +34,8 @@ function addToLocalStorage() {
 }
 
 function getFlashcardValues() {
-  const word = document.getElementById('add-word').value;
-  const definition = document.getElementById('add-definition').value;
+  const word = document.querySelector('#add-word').value;
+  const definition = document.querySelector('#add-definition').value;
   // - zebrac i dodac do obiektu
   return {
     word: word,
