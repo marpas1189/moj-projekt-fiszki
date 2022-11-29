@@ -15,24 +15,38 @@
 
 //Pobrac slowo i definicje
 function getFlashcardValues() {
-  const word = document.querySelector('#add-word').value;
-  const definition = document.querySelector('#add-definition').value;
+  word = document.querySelector('#add-word').value;
+  definition = document.querySelector('#add-definition').value;
   //Utworzyc obiekt ze slowem i definicja
-  let obj = {
+  obj = {
     word:word,
     definition:definition
-  }
+  };
+  console.log(obj.word);
+  console.log(obj.definition);
   return obj;
 }
+
 //Utworz zmienna flashcard (slowo + definicja)
-//let flashcard = getFlashcardValues();
+let flashcard = getFlashcardValues();
+
+//Utworz liste flashcards
+let wordsList = [];
+wordsList.push(obj.word);
 
 //Utworz localStorage
-// word is not defined at addToLocalStorage at HTMLButtonElement.onclick 
 function addToLocalStorage() {
-localStorage.setItem('word',JSON.stringify(word));
-localStorage.setItem('definition',JSON.stringify(definition));
-}
+  localStorage.setItem('wordsList',JSON.stringify(wordsList));
+  }
 
+
+//Utworz localStorage
+//Nie dziala 
+/*
+function addToLocalStorage() {
+localStorage.setItem('word',JSON.stringify(obj));
+localStorage.setItem('definition',JSON.stringify(obj));
+}
+*/
 
 
