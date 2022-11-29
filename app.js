@@ -1,52 +1,38 @@
 // - Wyswietlic na kartkach flashcardsach
-// - Bierzemy wartoci uzytkownika
-// - Zebrac i dodac do obiektu
+
 // - Zdobyc aktualna liste slow
 // - Ten obiekt musimy dodac do listy slow
 // - Ta liste zapisac na localStorage
 
-setFlashcardValues(getFromStorage());
 
-// function showAvailableFlashcards() {
-//   let flashcard = localStorage.getItem('word');
-//   flashcard = JSON.parse(flashcard);
-//   console.log('Z localStorage: ', flashcard.word, flashcard.definition);
-// }
+// - Wyswietlic na kartkach flashcardsach
 
-function setFlashcardsValues(flashcards) {
-  // TODO: Zamienic wszystkie obiekty z listy na fiszki
-  document.querySelector('#word1').innerHTML = flashcard.word;
-  document.querySelector('#def1').innerHTML = flashcard.definition;
-}
 
-function addToLocalStorage() {
-  // - Bierzemy wartoci uzytkownika
-  let flashcard = getFlashcardValues();
-  // - zapisac na localStorage
+// - Zdobyc aktualna liste slow
+// - Ten obiekt musimy dodac do listy slow
+// - Ta liste zapisac na localStorage
 
-  // TODO: Kiedy inicjowac liste? Ma pochodzic z localStorage
-  let wordsList = [];
-  wordsList.push(flashcard);
 
-  localStorage.setItem('wordsList', JSON.stringify(wordsList));
-
-  // TODO: Dodac pojedynczy obiekt do listy czyli zrobic update istniejacej
-}
-
+//Pobrac slowo i definicje
 function getFlashcardValues() {
   const word = document.querySelector('#add-word').value;
   const definition = document.querySelector('#add-definition').value;
-  // - zebrac i dodac do obiektu
-  return {
-    word: word,
-    definition: definition,
-  };
+  //Utworzyc obiekt ze slowem i definicja
+  let obj = {
+    word:word,
+    definition:definition
+  }
+  return obj;
+}
+//Utworz zmienna flashcard (slowo + definicja)
+//let flashcard = getFlashcardValues();
+
+//Utworz localStorage
+// word is not defined at addToLocalStorage at HTMLButtonElement.onclick 
+function addToLocalStorage() {
+localStorage.setItem('word',JSON.stringify(word));
+localStorage.setItem('definition',JSON.stringify(definition));
 }
 
-function getFromStorage() {
-  let flashcard = localStorage.getItem('wordsList');
-  flashcardsList = JSON.parse(flashcard);
 
-  console.log(flashcardsList[0].word, flashcardsList[0].definition);
-  return flashcardsList;
-}
+
