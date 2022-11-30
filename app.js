@@ -44,8 +44,8 @@ function addToLocalStorage() {
 //Nie dziala 
 /*
 function addToLocalStorage() {
-localStorage.setItem('word',JSON.stringify(obj));
-localStorage.setItem('definition',JSON.stringify(obj));
+localStorage.setItem('word',JSON.stringify(obj.word));
+localStorage.setItem('definition',JSON.stringify(obj.definition));
 }
 */
 
