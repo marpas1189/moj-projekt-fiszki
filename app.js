@@ -1,15 +1,24 @@
+// DONE:
 // - Zdobyc aktualna liste slow
-// - Wyswietlic na kartkach flashcardsach
 // - Zdobyc nowe slowo
 // - Zapisac na localStorage jako dodatkowy element
 
-// GLOBAL SCOPE
+// TODO:
+// - Zablokowac dodawanie brzydkich slow + alert
+// (jakiś 'if' zwracający nic w przypadku zlego slowa)
+// - Wyswietlic na kartkach flashcardsach
+// (Jakas funkcja która wywoływana jest globalnie po załadowaniu listy słów z naszej Bazy Danych)
+
+// GLOBAL SCOPE VARIABLES
 let WORDS_LIST = JSON.parse(localStorage.getItem('wordsList'));
 let FORBIDDEN_WORDS = ['pupa', 'middle finger'];
 
 if (!WORDS_LIST) {
   WORDS_LIST = [];
 }
+
+// function loadFlashcardsOntoHTLM(){}
+
 
 function addNewFlashcard() {
   // LOCAL SCOPE
