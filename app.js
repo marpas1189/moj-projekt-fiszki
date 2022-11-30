@@ -52,3 +52,5 @@ function getFlashcardValues() {
 function thirdScope() {
   console.log('Trzeci scope lokalny, wywolywanie');
 }
+
+
