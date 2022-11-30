@@ -3,7 +3,6 @@
 // - Zdobyc nowe slowo
 // - Zapisac na localStorage jako dodatkowy element
 
-
 // GLOBAL SCOPE
 let WORDS_LIST = JSON.parse(localStorage.getItem('wordsList'));
 let FORBIDDEN_WORDS = ['pupa', 'middle finger'];
@@ -29,6 +28,10 @@ function removeLastFlashcard() {
 
 function updateLocalStorage() {
   localStorage.setItem('wordsList', JSON.stringify(WORDS_LIST));
+}
+
+function editFlashcard() {
+  console.log('Edytowanie');
 }
 
 //Pobrac slowo i definicje
