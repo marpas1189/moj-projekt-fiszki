@@ -1,72 +1,84 @@
 .main-container {
-    width: 1500px;
-    height: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Open Sans', sans-serif;
-    display:flex;
+  width: 1500px;
+  height: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
 }
 .left-container-flashcards {
-    margin-right: 10%;
+  margin-right: 10%;
 }
 .paragraph {
-    width: 500px;
+  width: 500px;
 }
 .left-container-add-word {
-    margin-top: 1%;
-    margin-bottom: 2%;
+  margin-top: 1%;
+  margin-bottom: 2%;
 }
 .left-container-add-definition {
-    margin-top: 1%;
-    margin-bottom: 10%;
+  margin-top: 1%;
+  margin-bottom: 10%;
 }
 #add-word {
-    border-radius: 5px;
-    border-color:#9fd6ed;
-    width: 90%;
-    height: 30px;
+  border-radius: 5px;
+  border-color: #9fd6ed;
+  width: 90%;
+  height: 30px;
 }
 #add-definition {
-    border-radius: 5px;
-    border-color:#9fd6ed;
-    width: 90%;
-    height: 120px; 
+  border-radius: 5px;
+  border-color: #9fd6ed;
+  width: 90%;
+  height: 120px;
 }
-#button-add-word {
-    border-radius: 5px;
-    border-color:black;
-    background-color: aquamarine;
-    color:black;
-    width: 45%;
-    height: 45px;  
-    float:right;
-    margin-right: 40px;
-    font-size: 20px;
-}
+
 .print-preview-box {
-    border: solid black;
-    width:500px;
-    height:500px;
-    margin-bottom: 20px;
-    border-width: thin;
+  border: solid black;
+  width: 500px;
+  height: 500px;
+  margin-bottom: 20px;
+  border-width: thin;
 }
 #export-button {
-    width:45%;
-    height:40px;
-    background-color: #d78ce6;
-    color:white;
-    font-size: 20px;
-    float: right;
+  width: 45%;
+  height: 40px;
+  background-color: #d78ce6;
+  color: white;
+  font-size: 20px;
+  float: right;
 }
 .right-container-add-word {
-    width:245px;
-    height:120px;
-    background-color: #c0c6cf;
-    display: inline-block;
+  width: 245px;
+  height: 120px;
+  background-color: #c0c6cf;
+  display: inline-block;
 }
 .right-container-add-definition {
-    width:250px;
-    height:120px;
-    background-color: #c0c6cf;
-    display: inline-block;
+  width: 250px;
+  height: 120px;
+  background-color: #c0c6cf;
+  display: inline-block;
+}
+
+.btn {
+  border-radius: 5px;
+  color: white;
+  width: 45%;
+  height: 45px;
+  float: right;
+  margin-right: 40px;
+  font-size: 20px;
+}
+
+.error {
+  background-color: rgb(225, 51, 86);
+}
+
+.primary {
+  background-color: rgb(51, 155, 225);
+}
+
+.margin-5 {
+  margin: 10px;
 }

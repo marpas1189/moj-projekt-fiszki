@@ -1,52 +1,51 @@
-// - Wyswietlic na kartkach flashcardsach
-
 // - Zdobyc aktualna liste slow
-// - Ten obiekt musimy dodac do listy slow
-// - Ta liste zapisac na localStorage
-
-
 // - Wyswietlic na kartkach flashcardsach
+// - Zdobyc nowe slowo
+// - Zapisac na localStorage jako dodatkowy element
 
 
-// - Zdobyc aktualna liste slow
-// - Ten obiekt musimy dodac do listy slow
-// - Ta liste zapisac na localStorage
+// GLOBAL SCOPE
+let WORDS_LIST = JSON.parse(localStorage.getItem('wordsList'));
+let FORBIDDEN_WORDS = ['pupa', 'middle finger'];
 
+if (!WORDS_LIST) {
+  WORDS_LIST = [];
+}
+
+function addNewFlashcard() {
+  // LOCAL SCOPE
+  // Utworz zmienna flashcard (slowo + definicja)
+  let flashcard = getFlashcardValues();
+  WORDS_LIST.push(flashcard);
+  updateLocalStorage();
+}
+
+function removeLastFlashcard() {
+  console.log('Czyszczenie');
+  // WORDS_LIST.pop();
+  WORDS_LIST = WORDS_LIST.filter((obj) => !FORBIDDEN_WORDS.includes(obj.word));
+  updateLocalStorage();
+}
+
+function updateLocalStorage() {
+  localStorage.setItem('wordsList', JSON.stringify(WORDS_LIST));
+}
 
 //Pobrac slowo i definicje
 function getFlashcardValues() {
-  word = document.querySelector('#add-word').value;
-  definition = document.querySelector('#add-definition').value;
-  //Utworzyc obiekt ze slowem i definicja
-  obj = {
-    word:word,
-    definition:definition
+  // Sprawdzic z ciekawosci trzeci lokalny scope i kolejnosc wywolywania
+  thirdScope();
+  // LOCAL SCOPE
+  let WORD = document.querySelector('#add-word').value;
+  let DEFINITION = document.querySelector('#add-definition').value;
+  // Utworzyc obiekt ze slowem i definicja
+
+  return {
+    word: WORD,
+    definition: DEFINITION,
   };
-  console.log(obj.word);
-  console.log(obj.definition);
-  return obj;
 }
 
-//Utworz zmienna flashcard (slowo + definicja)
-let flashcard = getFlashcardValues();
-
-//Utworz liste flashcards
-let wordsList = [];
-wordsList.push(obj.word);
-
-//Utworz localStorage
-function addToLocalStorage() {
-  localStorage.setItem('wordsList',JSON.stringify(wordsList));
-  }
-
-
-//Utworz localStorage
-//Nie dziala 
-/*
-function addToLocalStorage() {
-localStorage.setItem('word',JSON.stringify(obj.word));
-localStorage.setItem('definition',JSON.stringify(obj.definition));
+function thirdScope() {
+  console.log('Trzeci scope lokalny, wywolywanie');
 }
-*/
-
-
