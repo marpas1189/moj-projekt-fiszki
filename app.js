@@ -24,14 +24,21 @@ function addNewFlashcard() {
   // LOCAL SCOPE
   // Utworz zmienna flashcard (slowo + definicja)
   let flashcard = getFlashcardValues();
-  WORDS_LIST.push(flashcard);
-  updateLocalStorage();
+  if (WORDS_LIST.includes(FORBIDDEN_WORDS))
+  {
+    alert("Niedozwolone slowo");
+    WORDS_LIST.pop();
+  }
+  else {
+    WORDS_LIST.push(flashcard);
+    updateLocalStorage();
+  }
 }
 
 function removeLastFlashcard() {
   console.log('Czyszczenie');
-  // WORDS_LIST.pop();
-  WORDS_LIST = WORDS_LIST.filter((obj) => !FORBIDDEN_WORDS.includes(obj.word));
+   WORDS_LIST.pop();
+  //WORDS_LIST = WORDS_LIST.filter((obj) => !FORBIDDEN_WORDS.includes(obj.word));
   updateLocalStorage();
 }
 
@@ -45,8 +52,6 @@ function editFlashcard() {
 
 //Pobrac slowo i definicje
 function getFlashcardValues() {
-  // Sprawdzic z ciekawosci trzeci lokalny scope i kolejnosc wywolywania
-  thirdScope();
   // LOCAL SCOPE
   let WORD = document.querySelector('#add-word').value;
   let DEFINITION = document.querySelector('#add-definition').value;
@@ -57,9 +62,9 @@ function getFlashcardValues() {
     definition: DEFINITION,
   };
 }
-
-function thirdScope() {
-  console.log('Trzeci scope lokalny, wywolywanie');
+function addToDivs() {
+document.querySelector("#word1").innerHTML="slowo";
 }
+
 
 
